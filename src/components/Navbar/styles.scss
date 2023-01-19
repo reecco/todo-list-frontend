@@ -1,0 +1,120 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fefefe;
+  border-bottom: 1px solid #d0d2d3
+}
+
+.navbar a {
+  margin: 10px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  background-color: transparent;
+  transition: .2s;
+}
+
+.navbar .home {
+  margin-top: 11px;
+  font-size: 1.4rem;
+}
+
+.navbar .home svg {
+  background-color: transparent;
+}
+
+.navbar .home:hover,
+a:hover {
+  opacity: .7;
+}
+
+.navbar a:nth-last-child(1) {
+  margin-right: 2rem;
+}
+
+
+.logged-navbar {
+  background-color: #fefefe;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.logged-navbar .item {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.logged-navbar .item svg {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
+  color: #ffff;
+}
+
+.logged-navbar .item:hover {
+  opacity: .6;
+}
+
+// .logged-navbar {
+//   // padding-top: 10%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   // background-color: #fefefe;
+//   // border-radius: 20px;
+//   // margin: 40px;
+//   padding: 100px;
+//   height: 50vh;
+//   background-color: #fefefe;
+// }
+
+// .logged-navbar a {
+//   margin: 20px 0;
+//   font-size: 1.1rem;
+//   text-decoration: none;
+// }
+
+// .logged-navbar a:hover {
+//   opacity: .6;
+// }
+
+// .logged-navbar a, a h4, a svg {
+//   background-color: #fefefe;
+// }
+
+// .logged-navbar .item {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .logged-navbar .item svg {
+//   width: 25px;
+//   height: 25px;
+//   margin-bottom: 5px;
+// }
+
+// .logged-navbar .btn-loggout {
+
+//   margin: 20px;
+//   font-size: 1.1rem;
+//   cursor: pointer;
+// }
+
+// .logged-navbar .btn-loggout svg, h4 {
+//   background-color: #fefefe;
+// }
+
+// .logged-navbar .btn-loggout:hover {
+//   opacity: .6;
+// }

@@ -1,0 +1,92 @@
+@import '../../assets/scss/_main.scss';
+
+.container-login {
+  margin-top: $container-mg-top;
+  display: flex;
+  flex-direction: column;
+  height: 94vh;
+}
+
+.container-login .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #fefefe;
+  padding: 2.5rem 5rem;
+  border-radius: 15px;
+}
+
+.container-login .form h1 {
+  font-size: $h1-size;
+  text-align: center;
+  background-color: transparent;
+}
+
+.container-login .form .message {
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-bottom: 4%;
+  min-height: 20px;
+  color: rgb(255, 75, 75);
+  width: 100%;
+  font-size: 1.1rem;
+  background-color: transparent;
+}
+
+.container-login .form .input-email, .input-password {
+  margin-bottom: 40px;
+  border: 2px solid rgba(235, 222, 235, 0.933);
+  border-radius: 15px;
+  padding: 20px 15px;
+  font-size: 1.3rem;
+  width: 100%;
+  transition: .2s;
+}
+
+.container-login .form .input-email:focus, .input-password:focus {
+  border: 2px solid rgba(248, 157, 248, 0.933);
+  outline: rgba(248, 157, 248, 0.933);
+}
+
+.container-login .form .btn-login {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  background-color: #007bff;
+  transition: .2s;
+  color: #fefefe;
+  cursor: pointer;
+}
+
+.container-login .form .btn-login:hover {
+  opacity: .7;
+}
+
+.container-login .form .btn-login:active {
+  opacity: 1;
+}
+
+.container-login .form .recover-password {
+  margin-top: 5%;
+  background-color: transparent;
+}
+
+.container-login .form .recover-password:hover {
+  opacity: .7;
+  color: #007bff;
+}
+
+
+
+
+.container-login .form .input-email--alert, .input-password--alert {
+  margin-bottom: 40px;
+  border: 2px solid rgb(255, 103, 103);
+  border-radius: 15px;
+  padding: 20px 15px;
+  font-size: 1.3rem;
+  width: 100%;
+  transition: .2s;
+}

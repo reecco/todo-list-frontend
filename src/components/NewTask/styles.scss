@@ -1,0 +1,74 @@
+.container-modal-newtask {
+  width: 100%;
+}
+
+.container-modal-newtask .btn-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-modal-newtask .btn-box .btn-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  background-color: red;
+  color: #fefefe;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.container-modal-newtask .btn-box .btn-close:hover {
+  opacity: .6;
+}
+
+form .box-field {
+  // width: 100%;
+  margin: 20px 0;
+}
+
+form .box-field label {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+form .box-field .input-desc {
+  height: 300px;
+  resize: none;
+}
+
+form .box-field .input-title, .input-desc {
+  font-size: 1.1rem;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 2px solid rgba(235, 222, 235, 0.933);;
+  transition: .2s;
+}
+
+form .box-field .input-title:focus, .input-desc:focus {
+  border: 2px solid rgba(248, 157, 248, 0.933);
+  outline: rgba(248, 157, 248, 0.933);
+}
+
+form .btn-change {
+  width: 15%;
+  height: 50px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: #28a745;
+  color: #fefefe;
+  transition: .2s;
+  cursor: pointer;
+}
+
+form .btn-change:hover {
+  background-color: #1c7530;
+}
+
+form .btn-change:active {
+  background-color: #2cc650;
+}
+
+#title-error, #desc-error {
+  border: 2px solid rgb(255, 103, 103);
+}

@@ -1,0 +1,141 @@
+.container-home .container-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  // height: 95vh;
+  height: 95vh;
+}
+
+.container-content .container-main {
+  width: 86%;
+  background-color: #fefefe;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-main .container-tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 65%;
+}
+
+.container-main .container-tasks .box-btn-task {
+  margin-left: auto;
+}
+
+.container-main .container-tasks .btn-newtask {
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #28a745;
+  color: #fefefe;
+  cursor: pointer;
+  transition: .2s;
+  font-size: .9rem;
+}
+
+.container-main .container-tasks .btn-newtask:hover {
+  background-color: #1c7530;
+}
+
+.container-main .container-tasks .btn-newtask:active {
+  background-color: #2cc650;
+}
+
+.container-main .container-tasks::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+.container-main .container-tasks::-webkit-scrollbar-thumb {
+  background-color: rgba(235, 222, 235, 0.933);
+  border-radius: 10px;
+}
+
+.container-main .calendary-box {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+}
+
+.container-main .container-tasks .task {
+  margin: 20px 10px;
+  padding: 20px 50px;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(235, 222, 235, 0.933);
+  background-color: rgba(252, 252, 252, 0.933);
+  border-radius: 15px;
+  transition: .5s;
+}
+
+.container-main .container-tasks .task:hover {
+  border: 1px solid rgba(248, 157, 248, 0.933);
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.933);
+}
+
+.container-main .container-tasks .task .about h3, .info {
+  width: 90%;
+  margin: 20px;
+  text-align: justify;
+}
+
+.container-main .container-tasks .task .about h3 {
+  font-size: 1.3rem;
+}
+
+.container-main .container-tasks .task .about .info-desc {
+  font-size: 1rem;
+}
+
+.container-main .container-tasks .task .about .info-date {
+  font-size: .8em;
+}
+
+.container-tasks .task .box-button {
+  width: 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-tasks .task .box-button .btn {
+  margin: 10px 0;
+  border-radius: 15px;
+  color: #fefefe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.container-tasks .task .box-button .btn:hover {
+  scale: 1.1;
+}
+
+.container-tasks .task .box-button .btn:active {
+  scale: .9;
+}
+
+.container-tasks .task .box-button .btn-edit {
+  background-color: #ffc107;
+  font-size: .9rem;
+  width: 30px;
+  height: 30px;
+}
+
+.container-tasks .task .box-button .btn-delete {
+  background-color: #dc3545;
+  font-size: 1.2rem;
+  width: 30px;
+  height: 30px;
+}

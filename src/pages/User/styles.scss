@@ -1,0 +1,100 @@
+.container-user .container-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  // height: 95vh;
+  height: 94vh;
+}
+
+.container-content .infos {
+  width: 86%;
+  background-color: #fefefe;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-content .infos h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5%;
+}
+
+.container-fields {
+  height: 50%;
+}
+
+.container-fields .box-fields {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-fields .box-fields label {
+  margin-bottom: 5px;
+  font-size: 1.15rem;
+}
+
+.container-fields .box-fields .input {
+  padding: 15px 10px;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  border: 2px solid rgba(235, 222, 235, 0.933);
+  transition: .2s;
+}
+
+.container-fields .box-fields .input:focus {
+  border: 2px solid rgba(248, 157, 248, 0.933);
+  outline: rgba(248, 157, 248, 0.933);
+}
+
+.container-fields .box-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container-fields .box-button .btn-change, .btn-unmake {
+  margin-top: 15px;
+  padding: 15px 0;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  transition: .2s;
+  color: #fefefe;
+  cursor: pointer;
+}
+
+.container-fields .box-button .btn-change {
+  background-color: #ffc107;
+  width: 50%;
+}
+
+.container-fields .box-button .btn-change:hover {
+  background-color: #d1a111;
+}
+
+.container-fields .box-button .btn-change:active {
+  background-color: #f5bc13;
+}
+
+.container-fields .box-button .btn-unmake {
+  background-color: #dc3545;
+  width: 40%;
+}
+
+.container-fields .box-button .btn-unmake:hover {
+  background-color: #a12c38;
+}
+
+.container-fields .box-button .btn-unmake:active {
+  background-color: #f73d50;
+}
+
+.container-fields .box-fields 
+.input-email-change::placeholder, 
+.input-username-change::placeholder, 
+.input-password-change::placeholder {
+  color: #000;
+  opacity: .8;
+}
