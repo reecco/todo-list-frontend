@@ -95,7 +95,7 @@ function Home() {
                       <Button className="btn-newtask" value="Nova tarefa" onClick={() => handleOpenModal('new')} />
                     </div>
                     {Object.keys(taskList).length > 0 &&
-                      Object.keys(taskList.tasks).length >= 2 ? Object.keys(taskList.tasks).map((index: any) => (
+                      Object.keys(taskList.tasks).length > 0 ? Object.keys(taskList.tasks).map((index: any) => (
                         <div key={index} className="task">
                           <div className="about">
                             <h3>{taskList.tasks[index].title}</h3>

@@ -2,13 +2,15 @@ import './styles.scss';
 
 type Size = {
   width: string,
-  height: string
+  height: string,
+  borderRadius?: string
 }
 
-function Loading({ width, height }: Size) {
+function Loading({ width, height, borderRadius }: Size) {
   const style = {
     width,
-    height
+    height,
+    borderRadius
   }
 
   return <div style={style} className="loading"></div>;

@@ -139,3 +139,58 @@
   width: 30px;
   height: 30px;
 }
+
+@media (max-width: 420px) {
+  .container-home .container-content {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .container-content .container-main {
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .container-main .container-tasks {
+    width: 100%;
+  }
+
+  .container-main .container-tasks .box-btn-task {
+    margin: 0;
+    width: 25%;
+  }
+
+  .container-main .container-tasks .btn-newtask {
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .container-main .container-tasks .task {
+    flex-direction: column;
+    width: 90%;
+    padding: 0;
+  }
+
+  .container-main .container-tasks .task .about h3, .info {
+    text-align: right;
+  }
+
+  .container-main .container-tasks .task .about h3 {
+    font-size: 1rem;
+  }
+
+  .container-main .container-tasks .task .about .info {
+    font-size: .9rem;
+  }
+
+  .container-tasks .task .box-button {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+}

@@ -5,28 +5,57 @@ import { useNavigate } from "react-router-dom";
 import { ImExit } from 'react-icons/im';
 import { IoHomeSharp } from 'react-icons/io5';
 import { useCookies } from "react-cookie";
+import Modal from 'react-modal';
 
 import './styles.scss';
 import { navbar } from "./utils";
+import { useState } from "react";
+import Loading from "../Loading";
 
 type NavbarProps = {
   className: string
 }
 
 function Navbar({ className }: NavbarProps) {
-  const [cookies] = useCookies(['authorization', 'username', 'userId', 'userIdTask']);
   const navigate = useNavigate();
   const [, removeCookie] = useCookies(['authorization', 'userId', 'userIdTask', 'username']);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const logout = () => {
-    removeCookie('authorization', '');
-    removeCookie('userId', '');
-    removeCookie('userIdTask', '');
-    removeCookie('username', '');
+    handleOpenModalLoggout();
     setTimeout(() => {
+      handleCloseModalLoggout();
+      removeCookie('authorization', '');
+      removeCookie('userId', '');
+      removeCookie('userIdTask', '');
+      removeCookie('username', '');
       navigate('/signin');
-      alert('Saindo...');
-    }, 2000);
+    }, 5000);
+  }
+
+  const handleCloseModalLoggout = () => {
+    setIsOpen(false);
+  }
+
+  const handleOpenModalLoggout = () => {
+    setIsOpen(true);
+  }
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      width: '300px',
+      height: '300px',
+      borderRadius: '15px',
+      border: 'none',
+      display: 'flex',
+      backgroundColor: 'transparent'
+    }
   }
 
   return (
@@ -53,6 +82,12 @@ function Navbar({ className }: NavbarProps) {
             <ImExit />
             <h4>Sair</h4>
           </button>
+          <Modal
+            isOpen={modalIsOpen}
+            style={customStyles}
+          >
+            <Loading width="150px" height="150px" borderRadius="50%" />
+          </Modal>
         </>
       )}
     </nav>
