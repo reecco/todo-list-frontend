@@ -23,8 +23,10 @@
 }
 
 form .box-field {
-  // width: 100%;
+  width: 50%;
   margin: 20px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 form .box-field label {
@@ -33,7 +35,7 @@ form .box-field label {
 }
 
 form .box-field .input-desc {
-  height: 300px;
+  height: 120px;
   resize: none;
 }
 
@@ -51,7 +53,7 @@ form .box-field .input-title:focus, .input-desc:focus {
 }
 
 form .btn-change {
-  width: 15%;
+  width: 25%;
   height: 50px;
   font-size: 1rem;
   border-radius: 10px;
@@ -69,6 +71,61 @@ form .btn-change:active {
   background-color: #2cc650;
 }
 
+form .btn-disabled {
+  width: 25%;
+  height: 50px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: #28a745;
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .5;
+  cursor: default;
+}
+
+form progress {
+  margin-top: 1%;
+  width: 30%;
+  margin-left: auto;
+  border-radius: 10px;
+}
+form progress::-webkit-progress-bar {
+  border-radius: 10px;
+  background-color: rgba(235, 222, 235, 0.933);
+  height: 10px;
+}
+
+form progress::-webkit-progress-value {
+  background-color: rgba(248, 157, 248, 0.933);
+  border-radius: 10px;
+}
+
 #title-error, #desc-error {
   border: 2px solid rgb(255, 103, 103);
+}
+
+@media (max-width: 420px) {
+  form .box-field {
+    margin: 10px 0;
+    width: 80%;
+  }
+
+  form .btn-change, form .btn-disabled {
+    width: 100%;
+    font-size: .9rem;
+  }
+
+  form progress {
+    margin-top: 5%;
+    width: 50%;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 720px) {
+  form .btn-change, form .btn-disabled {
+    width: 50%;
+    font-size: .9rem;
+  }
 }

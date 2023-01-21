@@ -18,6 +18,8 @@ function NewTask({ onClick }: NewTaskProps) {
   const [inputDescription, setInputDescription] = useState('');
   const [inputTitleError, setInputTitleError] = useState('title');
   const [inputDescError, setInputDescError] = useState('desc');
+  const [lengthTitle, setLengthTitle] = useState(0);
+  const [lengthDescription, setLengthDescription] = useState(0);
 
   const validInput = (title: string, description: string) => {
     const isValidTitle = title == '' || title == ' ';
@@ -42,6 +44,9 @@ function NewTask({ onClick }: NewTaskProps) {
 
       return false;
     }
+
+    if ((title.length > 20 || title.length <= 0) || ( description.length > 50 || description.length <= 0))
+      return false;
 
     return true;
   }
@@ -86,12 +91,6 @@ function NewTask({ onClick }: NewTaskProps) {
     width: '100%'
   }
 
-  const stylesBox: any = {
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'column'
-  }
-
   return (
     <div className="container-modal-newtask">
       <div className="btn-box">
@@ -103,7 +102,7 @@ function NewTask({ onClick }: NewTaskProps) {
       </div>
       <form style={stylesForm} onSubmit={task}>
         <p style={{ color: '#28a745', fontSize: '1rem', height: '15px' }}>{message}</p>
-        <div style={stylesBox} className="box-field">
+        <div className="box-field">
           <label htmlFor="title">Título</label>
           <Input
             className='input-title'
@@ -111,25 +110,45 @@ function NewTask({ onClick }: NewTaskProps) {
             name='title'
             type='text'
             value={inputTitle}
-            onChange={(event: any) => setInputTitle(event.target.value)}
+            onChange={(event: any) => {
+              setInputTitle(event.target.value);
+              setLengthTitle(event.target.value.length);
+            }}
             placeholder="Digite o título da tarefa"
           />
+          <progress 
+            value={lengthTitle} 
+            max={20}>
+          </progress>
         </div>
-        <div style={stylesBox} className="box-field">
+        <div className="box-field">
           <label htmlFor="desc">Descrição</label>
           <textarea
             name="desc"
             id={inputDescError}
             className='input-desc'
             value={inputDescription}
-            onChange={(event) => setInputDescription(event.target.value)}
+            onChange={(event) => {
+              setInputDescription(event.target.value);
+              setLengthDescription(event.target.value.length);
+            }}
             placeholder="Digite a descrição da tarefa">
           </textarea>
+          <progress 
+            value={lengthDescription} 
+            max={50}>
+          </progress>
         </div>
-        <Button
-          className="btn-change"
-          value="Adicionar tarefa"
-        />
+        {(lengthTitle > 20 || lengthTitle <= 0) || (lengthDescription > 50 || lengthDescription <= 0) ? (
+          <p className="btn-disabled">
+            Adicionar tarefa
+          </p>
+        ): (
+            <Button
+              className="btn-change"
+              value="Adicionar tarefa"
+            />
+        )}
       </form>
     </div>
   );
