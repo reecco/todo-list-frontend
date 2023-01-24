@@ -5,11 +5,12 @@ type ButtonProps = {
   className: string,
   onClick?: any,
   onChange?: any,
-  style?: any
+  style?: any,
+  disable?: boolean
 }
 
 function Button(props: ButtonProps) {
-  let { id, value, name, className, onClick, onChange, style } = props
+  let { id, value, name, className, onClick, onChange, style, disable } = props
 
   return <button 
             className={className} 
@@ -18,6 +19,7 @@ function Button(props: ButtonProps) {
             onClick={onClick}
             onChange={onChange}
             style={style}
+            disabled={disable}
          >
             {value}
          </button>;
