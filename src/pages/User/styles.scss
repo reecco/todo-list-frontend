@@ -98,3 +98,9 @@
   color: #000;
   opacity: .8;
 }
+
+@media (max-width: 1200px) {
+  .container-content .infos {
+    margin-left: auto;
+  }
+}

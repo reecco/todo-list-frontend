@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin: 20px;
-  // height: 95vh;
-  height: 95vh;
+  height: 100vh;
 }
 
 .container-content .container-main {
@@ -11,7 +10,7 @@
   background-color: #fefefe;
   border-radius: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .container-main .container-tasks {
@@ -21,6 +20,7 @@
   overflow: hidden;
   overflow-y: scroll;
   width: 65%;
+  height: 100vh;
 }
 
 .container-main .container-tasks .box-btn-task {
@@ -58,23 +58,19 @@
   border-radius: 10px;
 }
 
-.container-main .calendary-box {
-  width: 35%;
-  display: flex;
-  justify-content: center;
-}
-
 .container-main .container-tasks .task {
-  margin: 20px 10px;
-  padding: 20px 50px;
+  // margin: 20px 10px;
+  // padding: 20px 50px;
+  margin: 20px 0;
+  padding: 20px 0;
   width: 75%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   border: 1px solid rgba(235, 222, 235, 0.933);
   background-color: rgba(252, 252, 252, 0.933);
   border-radius: 15px;
   transition: .5s;
+  word-break: break-all;
 }
 
 .container-main .container-tasks .task:hover {
@@ -82,29 +78,38 @@
   box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.933);
 }
 
-.container-main .container-tasks .task .about h3, .info {
+.container-tasks .task .about {
+  margin-top: 0;
+  margin-left: 20px;
   width: 90%;
-  margin: 20px;
-  text-align: justify;
+  height: 100%;
 }
 
-.container-main .container-tasks .task .about h3 {
+.container-tasks .task .about h3, .info {
+  margin: 20px 0;
+}
+
+.container-tasks .task .about h3 {
   font-size: 1.3rem;
 }
 
-.container-main .container-tasks .task .about .info-desc {
-  font-size: 1rem;
+.container-tasks .task .about .info {
+  // width: 50%;
 }
 
-.container-main .container-tasks .task .about .info-date {
+.container-tasks .task .about .info-desc {
+  font-size: .9rem;
+}
+
+.container-tasks .task .about .info-date {
   font-size: .8em;
 }
 
 .container-tasks .task .box-button {
-  width: 5%;
+  width: 15%;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
+  margin-left: auto;
 }
 
 .container-tasks .task .box-button .btn {
@@ -140,57 +145,56 @@
   height: 30px;
 }
 
-@media (max-width: 420px) {
-  .container-home .container-content {
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 0;
+@media (max-width: 1200px) {
+  .container-home {
+    height: 100vh;
   }
 
   .container-content .container-main {
-    width: 90%;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+    width: 80%;
+    margin: auto 0;
+    margin-left: auto;
   }
 
+  .container-main .container-tasks {
+    width: 80%;
+  }
+
+  .container-main .container-tasks .task {
+    width: 95%;
+    justify-content: space-between;
+  }
+
+  .container-tasks .task .about {
+    margin-left: 30px;
+  }
+
+  .container-tasks .task .box-button {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
   .container-main .container-tasks {
     width: 100%;
   }
 
-  .container-main .container-tasks .box-btn-task {
-    margin: 0;
-    width: 25%;
-  }
-
-  .container-main .container-tasks .btn-newtask {
-    margin: 0;
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .container-main .container-tasks .task {
-    flex-direction: column;
-    width: 90%;
-    padding: 0;
-  }
-
-  .container-main .container-tasks .task .about h3, .info {
-    text-align: right;
-  }
-
-  .container-main .container-tasks .task .about h3 {
-    font-size: 1rem;
-  }
-
-  .container-main .container-tasks .task .about .info {
-    font-size: .9rem;
+  .container-tasks .task .about {
+    width: 80%;
   }
 
   .container-tasks .task .box-button {
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
+    width: 90%;
+    justify-content: flex-end;
+    margin: 0 20px;
   }
+
+  .container-tasks .task .box-button .btn {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 468px) {
+  
 }

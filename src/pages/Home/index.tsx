@@ -53,13 +53,13 @@ function Home() {
     }
     setIsOpenEdit(true);
 
-    return
+    return;
   }
 
   const handleCloseModal = (modal: string) => {
     if (modal == 'new') {
       setIsOpen(false);
-      return
+      return;
     }
     setIsOpenEdit(false);
 
@@ -92,37 +92,45 @@ function Home() {
                 <div className="container-main">
                   <div className="container-tasks">
                     <div className="box-btn-task">
-                      <Button className="btn-newtask" value="Nova tarefa" onClick={() => handleOpenModal('new')} />
+                      <Button 
+                        className="btn-newtask" 
+                        value="Nova tarefa" 
+                        onClick={() => handleOpenModal('new')} 
+                      />
                     </div>
                     {Object.keys(taskList).length > 0 &&
                       Object.keys(taskList.tasks).length > 0 ? Object.keys(taskList.tasks).map((index: any) => (
                         <div key={index} className="task">
-                          <div className="about">
-                            <h3>{taskList.tasks[index].title}</h3>
-                            <p className="info info-desc" >{taskList.tasks[index].description}</p>
-                            <p className="info info-date">{new Date(taskList.tasks[index].dateCreated).toLocaleString('pt-BR')}</p>
-                          </div>
                           <div className="box-button">
                             <button className="btn btn-edit" onClick={() => {
                               handleOpenModal('edit');
                               setIdTask(taskList.tasks[index]._id);
-                            }}><FaEdit />
+                            }}>
+                              <FaEdit />
                             </button>
-                            <DeleteTask className="btn btn-delete" id={taskList.tasks[index]._id} />
+                            <DeleteTask 
+                              className="btn btn-delete" 
+                              id={taskList.tasks[index]._id} 
+                            />
+                          </div>
+                          <div className="about">
+                            <h3>{taskList.tasks[index].title}</h3>
+                            <p className="info info-desc">
+                              {taskList.tasks[index].description}
+                            </p>
+                            <p className="info info-date">
+                              {new Date(taskList.tasks[index].dateCreated).toLocaleString('pt-BR')}
+                            </p>
                           </div>
                         </div>
                       )) : (
                       <p style={{ margin: 'auto', 'fontSize': '1.4rem' }}>Nenhuma tarefa foi encontrada.</p>
                     )}
                   </div>
-                  <div className="calendary-box">
-                    <h1>Calendário</h1>
-                  </div>
                 </div>
               </>
             </div>
           </div>
-          <Footer className="logged-footer" />
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={() => handleCloseModal('new')}
@@ -148,7 +156,7 @@ function Home() {
           <Error message={taskList.message} status={taskList.status} />
         </div>
       )}
-
+      <Footer className="logged-footer" />
     </>
   )
 }

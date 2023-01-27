@@ -32,7 +32,7 @@ a:hover {
 }
 
 
-.logged-navbar {
+.logged-navbar, .navbar-hamburger {
   background-color: #fefefe;
   width: 10%;
   display: flex;
@@ -42,7 +42,7 @@ a:hover {
   border-radius: 20px;
 }
 
-.logged-navbar .item {
+.logged-navbar .item, .navbar-hamburger .item {
   margin: 15px 0;
   font-size: 1.1rem;
   text-decoration: none;
@@ -51,6 +51,20 @@ a:hover {
   align-items: center;
   cursor: pointer;
   background-color: transparent;
+}
+
+.navbar-hamburger {
+  background-color: transparent;
+}
+
+.btn-close-navbar {
+  margin-top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  background-color: red;
+  color: #fefefe;
+  border-radius: 20px;
 }
 
 .logged-navbar .item svg {
@@ -64,10 +78,37 @@ a:hover {
   opacity: .6;
 }
 
-@media (max-width: 420px) {
+#logged-hamburger {
+  display: none;
+}
+
+@media (max-width: 468px) {
   .logged-navbar {
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
+    display: none;
+  }
+
+  #logged-hamburger {
+    display: block;
+    position: fixed;
+    font-size: 1.1rem;
+    background-color: transparent;
+    transition: .2s;
+  }
+
+  #logged-hamburger:active {
+    scale: 1.1;
+  }
+}
+
+@media (max-width: 768px) {
+  .logged-navbar {
+    width: 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .logged-navbar {
+    // padding: 20px;
+    position: fixed;
   }
 }

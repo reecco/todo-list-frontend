@@ -45,7 +45,7 @@ function NewTask({ onClick }: NewTaskProps) {
       return false;
     }
 
-    if ((title.length > 20 || title.length <= 0) || ( description.length > 50 || description.length <= 0))
+    if ((title.length > 30 || title.length <= 0) || ( description.length > 100 || description.length <= 0))
       return false;
 
     return true;
@@ -118,7 +118,7 @@ function NewTask({ onClick }: NewTaskProps) {
           />
           <progress 
             value={lengthTitle} 
-            max={20}>
+            max={30}>
           </progress>
         </div>
         <div className="box-field">
@@ -136,13 +136,15 @@ function NewTask({ onClick }: NewTaskProps) {
           </textarea>
           <progress 
             value={lengthDescription} 
-            max={50}>
+            max={100}>
           </progress>
         </div>
-        {(lengthTitle > 20 || lengthTitle <= 0) || (lengthDescription > 50 || lengthDescription <= 0) ? (
-          <p className="btn-disabled">
-            Adicionar tarefa
-          </p>
+        {(lengthTitle > 30 || lengthTitle <= 0) || (lengthDescription > 100 || lengthDescription <= 0) ? (
+          <Button 
+            className="btn-disabled" 
+            value="Adicionar tarefa"
+            disable={true}
+          />
         ): (
             <Button
               className="btn-change"
